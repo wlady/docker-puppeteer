@@ -47,9 +47,17 @@ if (typeof process.argv[4] === 'string') {
     delay = parseInt(process.argv[4], 10);
 }
 
+var prefix = 'full_screenshot';
+
+if (typeof process.argv[5] === 'string') {
+    prefix = process.argv[5];
+}
+
+
+
 var isMobile = false;
 
-let filename = `full_screenshot_${width}_${height}.png`;
+let filename = `${prefix}_${width}_${height}.png`;
 
 (async() => {
 
